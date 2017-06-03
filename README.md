@@ -1,7 +1,7 @@
 # git学习笔记
 
-# 查看、添加、提交、删除、找回，重置修改文件
-
+### 查看、添加、提交、删除、找回，重置修改文件
+```
 > git help <command> # 显示command的help
 
 > git show # 显示某次提交的内容 git show $id
@@ -16,23 +16,25 @@
 
 > git rm <file> # 从版本库中删除文件
 
-git rm <file> --cached # 从版本库中删除文件，但不删除文件
+> git rm <file> --cached # 从版本库中删除文件，但不删除文件
 
-git reset <file> # 从暂存区恢复到工作文件
+> git reset <file> # 从暂存区恢复到工作文件
 
-git reset -- . # 从暂存区恢复到工作文件
+> git reset -- . # 从暂存区恢复到工作文件
 
-git reset --hard # 恢复最近一次提交过的状态，即放弃上次提交后的所有本次修改
+> git reset --hard # 恢复最近一次提交过的状态，即放弃上次提交后的所有本次修改
 
-git ci <file> git ci . git ci -a # 将git add, git rm和git ci等操作都合并在一起做　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　git ci -am "some comments"
+> git ci <file> git ci . git ci -a # 将git add, git rm和git ci等操作都合并在一起做　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　git ci -am "some comments"
 
-git ci --amend # 修改最后一次提交记录
+> git ci --amend # 修改最后一次提交记录
 
-git revert <$id> # 恢复某次提交的状态，恢复动作本身也创建次提交对象
+> git revert <$id> # 恢复某次提交的状态，恢复动作本身也创建次提交对象
 
-git revert HEAD # 恢复最后一次提交的状态
+> git revert HEAD # 恢复最后一次提交的状态
 
-# 查看文件diff
+```
+
+### 查看文件diff
 
 git diff <file> # 比较当前文件和暂存区文件差异 git diff
 
@@ -46,7 +48,7 @@ git diff --cached # 比较暂存区和版本库差异
 
 git diff --stat # 仅仅比较统计信息
 
-# 查看提交记录
+### 查看提交记录
 
 git log git log <file> # 查看该文件每次提交记录
 
@@ -58,7 +60,7 @@ git log --stat #查看提交统计信息
 
 tig Mac上可以使用tig代替diff和log，brew install tig
 
-# Git 本地分支管理
+### Git 本地分支管理
 
 查看、切换、创建和删除分支
 
@@ -86,7 +88,7 @@ git br -d <branch> # 删除某个分支
 
 git br -D <branch> # 强制删除某个分支 (未被合并的分支被删除的时候需要强制)
 
-# 分支合并和rebase
+### 分支合并和rebase
 
 git merge <branch> # 将branch分支合并到当前分支
 
@@ -102,7 +104,7 @@ git apply ../sync.patch # 打补丁
 
 git apply --check ../sync.patch #测试补丁能否成功
 
-# Git暂存管理
+### Git暂存管理
 
 git stash # 暂存
 
@@ -112,7 +114,7 @@ git stash apply # 恢复暂存的内容
 
 git stash drop # 删除暂存区
 
-# Git远程分支管理
+### Git远程分支管理
 
 git pull # 抓取远程仓库所有分支更新并合并到本地
 
@@ -138,7 +140,7 @@ git push origin <local_branch>:<remote_branch> # 创建远程分支
 
 git push origin :<remote_branch> #先删除本地分支(git br -d <branch>)，然后再push删除远程分支
 
-# Git远程仓库管理
+### Git远程仓库管理
 
 GitHub
 
@@ -150,7 +152,7 @@ git remote add origin git@ github:robbin/robbin_site.git # 添加远程仓库地
 
 git remote set-url origin git@ github.com:robbin/robbin_site.git # 设置远程仓库地址(用于修改远程仓库地址) git remote rm <repository> # 删除远程仓库
 
-# 创建远程仓库
+### 创建远程仓库
 
 git clone --bare robbin_site robbin_site.git # 用带版本的项目创建纯版本仓库
 
